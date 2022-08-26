@@ -4,7 +4,7 @@ import torch.nn as nn
 # auth -> 1 and tp -> 0
 class IMDModel(nn.Module):
     def __init__(self):
-        super(IMDModel,self).__init__()
+        super(IMDModel, self).__init__()
 
         self.maxpool = nn.MaxPool2d(kernel_size=2)
         self.relu = nn.ReLU()

@@ -1,5 +1,4 @@
 import sys
-import torch
 import os
 import subprocess
 import re

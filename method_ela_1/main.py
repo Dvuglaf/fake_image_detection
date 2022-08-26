@@ -1,11 +1,9 @@
 import argparse
 import ela
 import level1
-import model
 import numpy as np
 import torch
 from PIL import Image
-from model import IMDModel
 
 
 def infer(img_path, model, device):
@@ -17,7 +15,7 @@ def infer(img_path, model, device):
 
     img = Image.open("temp/ela_img.jpg")
     img = img.resize((128, 128))
-    img = np.array(img, dtype=np.float32).transpose(2, 0, 1) / 255.0
+    img = np.array(img, dtype=np.float32).transpose((2, 0, 1)) / 255.0
     img = np.expand_dims(img, axis=0)
 
     out = model(torch.from_numpy(img).to(device=device))
