@@ -122,7 +122,7 @@ class ControlPanel(QWidget):
         self.progress_bar.setValue(100)
 
     def image_manipulation_detection(self):
-        path = os.path.abspath('method_ela_1/main.py')
+        path = os.path.abspath('method_ela_1/method_ela_1.py')
         param = str(self.path_field.toPlainText())
 
         proc = subprocess.Popen(["python", path, "-p", param], stdout=subprocess.PIPE, shell=True)
@@ -140,17 +140,17 @@ class ControlPanel(QWidget):
         self.result_label_2.setText(result[1])
 
     def error_level_analysis(self):
-        from method_ela_2 import main as ela2
+        from method_ela_2 import method_ela_2 as ela2
         res, prob = ela2.method_ela_2(str(self.path_field.toPlainText()))
         self.result_label_3.setText(f"{res}! Probability: {prob}")
 
     def face_spoffnet(self):
-        from method_face_spoffnet import main as spoff
+        from method_face_spoffnet import method_face_spoffnet as spoff
         res, prob = spoff.method_face_spoffnet(str(self.path_field.toPlainText()))
         self.result_label_4.setText(f"{res}! Probability: {prob}")
 
     def face_mobilenetv2(self):
-        from method_face_mobilenetv2 import main as mobile
+        from method_face_mobilenetv2 import method_face_mobilenetv2 as mobile
         res, prob = mobile.method_face_mobilenetv2(str(self.path_field.toPlainText()))
         self.result_label_5.setText(f"{res}! Probability: {prob}")
 

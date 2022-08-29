@@ -15,12 +15,12 @@ def find_metadata(img_path):
                 res = res + f"Found Software Traces...\nSoftware Signature: {value}\n"
                 print(res)
         if flag == 0:
-            res = res+"No Software Signature Found. Seems like real image..."
+            res = res + "No Software Signature Found. Seems like real image..."
             print(res)
             return res
 
     except Exception as e:
-        res = res+f'Failed to load metadata, error : {e}'
+        res = res + f'Failed to load metadata, error : {e}'
         print(res)
         return res
     return res
